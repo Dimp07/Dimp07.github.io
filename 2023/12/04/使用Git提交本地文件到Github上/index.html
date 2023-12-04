@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     
+    <meta charset="UTF-8">
+    <title> - Hexo</title>
+    <link rel="shortcut icon" href="/static/img/icon.png">
+    <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
+    
+<link rel="stylesheet" href="/static/kico.css">
+<link rel="stylesheet" href="/static/hingle.css">
+
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
+    <meta property="og:site_name" content="Hexo">
+    <meta property="og:title" content=""/>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+    <header>
+    <div class="head-title">
+        <h4>Hexo</h4>
+    </div>
+    <div class="head-action">
+        <div class="toggle-btn"></div>
+        <div class="light-btn"></div>
+        <div class="search-btn"></div>
+    </div>
+    <form class="head-search" method="post">
+        <input type="text" name="s" placeholder="搜索什么？">
+    </form>
+    <nav class="head-menu">
+        <a href="/">首页</a>
+        <div class="has-child">
+            <a>分类</a>
+            <div class="sub-menu">
+                
+            </div>
+        </div>
+        
+            <a href="/about">关于我</a>
+        
+            <a href="/friends">朋友们</a>
+        
+    </nav>
+</header>
+
+    <main>
+    <div class="wrap min">
+        <section class="post-title">
+            <h2>没有标题的文章</h2>
+            <div class="post-meta">
+                <time class="date">2023.12.04</time>
+            
+            </div>
+        </section>
+        <article class="post-content">
+        
+            <h1 id="使用Git提交本地文件到Github上"><a href="#使用Git提交本地文件到Github上" class="headerlink" title="使用Git提交本地文件到Github上"></a>使用Git提交本地文件到Github上</h1><h2 id="绑定-Git-与-Github"><a href="#绑定-Git-与-Github" class="headerlink" title="绑定 Git 与 Github"></a>绑定 Git 与 Github</h2><blockquote>
+<ol>
+<li>生成SSH key</li>
+</ol>
+</blockquote>
+<p>要想生成SSH key，首先就得安装 SSH，对于Linux 和 Mac 系统，其默认是安装 SSH 的，而对于 Windows 系统，其默认是不安装 SSH 的，不过由于我们安装了 Git Bash，其也应该自带了 SSH. 可以通过在 Git Bash 中输入 <code>ssh</code> 命令，查看本机是否安装 SSH：</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416124440391.png" alt="image-20230416124440391"></p>
+<p>如果出现上图所示，则说明已经安装 SSH ，输入 <code>ssh-keygen -t rsa</code> 命令，表示我们指定 RSA 算法生成密钥，然后敲三次回车键，期间不需要输入密码，之后就就会生成两个文件，分别为id_rsa和id_rsa.pub，即密钥id_rsa和公钥id_rsa.pub. 对于这两个文件，其都为隐藏文件，默认生成在以下目录：</p>
+<ul>
+<li>Linux 系统：<code>~/.ssh</code></li>
+<li>Mac 系统：<code>~/.ssh</code></li>
+<li>Windows 系统：<code>C:\Documents and Settings\username\\.ssh</code></li>
+<li>Windows 10 ThinkPad：<code>C:\Users\think\.ssh</code></li>
+</ul>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416124816690.png" alt="image-20230416124816690"></p>
+<p>密钥和公钥生成之后，我们要做的事情就是把公钥<code>id_rsa.pub</code>的内容添加到 GitHub，这样我们本地的密钥<code>id_rsa</code>和 GitHub 上的公钥<code>id_rsa.pub</code>才可以进行匹配，授权成功后，就可以向 GitHub 提交代码了。</p>
+<blockquote>
+<ol start="2">
+<li>添加 <code>SSH key</code></li>
+</ol>
+</blockquote>
+<p>进入Github主页，点击头像，点击 <code>Settings</code>。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416125137198.png" alt="image-20230416125137198"></p>
+<p>进入后点击 <code>SSH and GPG keys</code>。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416125226632.png" alt="image-20230416125226632"></p>
+<p>点击 <code>New SSH key</code>。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416125405786.png" alt="image-20230416125405786"></p>
+<p>Title 可以自己定义，Key 处填 <code>id_rsa.pub</code> 里的内容。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416125524020.png" alt="image-20230416125524020"></p>
+<blockquote>
+<ol start="3">
+<li>验证绑定是否成功</li>
+</ol>
+</blockquote>
+<p>添加完成 <code>SSH key</code> 后可以在 Git Bash 中输入 <code>ssh -T git@github.com</code> 进行判断。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416125931664.png" alt="image-20230416125931664"></p>
+<p>如图所示，即为 Git 与 Github 绑定成功。</p>
+<h2 id="将本地文件提交到-Github-上"><a href="#将本地文件提交到-Github-上" class="headerlink" title="将本地文件提交到 Github 上"></a>将本地文件提交到 Github 上</h2><blockquote>
+<ol>
+<li>在 Github 上创建 repository</li>
+</ol>
+</blockquote>
+<p>点击 Your repositories.</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416130343647.png" alt="image-20230416130343647"></p>
+<p>之后点击 <code>New</code> 。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416130447956.png" alt="image-20230416130447956"></p>
+<p>输入创建的 Repository name，（记得勾选 Add a README file）。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416130534223.png" alt="image-20230416130534223"></p>
+<blockquote>
+<ol start="2">
+<li>克隆 Github 上的仓库到本地。</li>
+</ol>
+</blockquote>
+<p>点击 <code>Code</code> ，点击 <code>SSH</code> ， 复制链接。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416130922895.png" alt="image-20230416130922895"></p>
+<p>在 Git Bach 上输入 <code>git clone &quot;复制的链接&quot;</code> 命令。</p>
+<p>如下图所示，即为成功。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416131238787.png" alt="image-20230416131238787"></p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416131655201.png" alt="image-20230416131655201"></p>
+<blockquote>
+<ol start="3">
+<li>将本地文件提交到 Github 上。</li>
+</ol>
+</blockquote>
+<p>在 Git Bach 上输入 <code>cd text-01/</code> 命令（ cd 后面的是你创建的文件夹名字），或者是关掉Git Bach，在 text-01 文件夹中打开 Git Bach 。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416132026682.png" alt="image-20230416132026682"></p>
+<p>输入 <code>git status</code> 命令可以查看仓库状态。</p>
+<p> <img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416132615563.png" alt="image-20230416132615563"></p>
+<p>在 text-01中新建一个文件 work.txt，用于提交测试。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416132803696.png" alt="image-20230416132803696"></p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416132845151.png" alt="image-20230416132845151"></p>
+<p>输入 <code>git add ./</code> 命令（add 后面有空格，才到 .），再输入 <code>git commit -m&quot;注释&quot;</code> 命令。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416133027119.png" alt="image-20230416133027119"></p>
+<p>输入 <code>git push origin main</code> 命令，等待完成后在 Github 上刷新页面，就会发现提交成功。</p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416133255417.png" alt="image-20230416133255417"></p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416133410417.png" alt="image-20230416133410417"></p>
+<p><img src="C:\Users\imp\AppData\Roaming\Typora\typora-user-images\image-20230416133440613.png" alt="image-20230416133440613"></p>
+<blockquote>
+<p>如果在输入 <code>git commit</code> 命令时出现 fatal: unable to auto-detect email address (got ‘…@…(none)’) 。这是由于未配置github用户名和邮箱所致</p>
+</blockquote>
+<p>解决方法：配置 Github 用户名与邮箱。用户名是 Github 上的用户名， 邮箱是注册 Github 时用的邮箱，输入命令时用户名与邮箱要加上 “” 。</p>
+<p><code>git config --global user.name &quot;你的用户名&quot;</code></p>
+<p><code>git config --global user.email &quot;你的邮箱&quot;</code></p>
+<p>以上就是使用 Git 提交本地文件到 Github 上的内容。</p>
+
+        </article>
+        <section class="post-near">
+            <ul>
+                
+                    <li>上一篇: 看完啦 (つд⊂)</li>
+                
+                
+                    <li>下一篇: <a href="/2023/12/04/hello-world/">Hello World</a></li>
+                
+            </ul>
+        </section>
+        
+    
+        <section class="post-author">
+        
+            <figure class="author-avatar">
+                <img src="https://sdn.geekzu.org/avatar/d22eb460ecab37fcd7205e6a3c55c228?s=200&r=X&d=" alt="Hingle" />
+            </figure>
+        
+            <div class="author-info">
+                <h4>Hingle</h4>
+                <p>请在这里设置你的作者信息</p>
+            </div>
+        </section>
+    
+    </div>
+</main>
+
+    <footer>
+    <div class="buttons">
+        <a class="to-top" href="#"></a>
+    </div>
+    <div class="wrap min">
+        <section class="widget">
+            <div class="row">
+                <div class="col-m-4">
+                    <h3 class="title-recent">最新文章：</h3>
+                    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/12/04/%E4%BD%BF%E7%94%A8Git%E6%8F%90%E4%BA%A4%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E5%88%B0Github%E4%B8%8A/">使用Git提交本地文件到Github上</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/12/04/hello-world/">Hello World</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-date">时光机：</h3>
+                    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-tags">标签云：</h3>
+                    
+                </div>
+            </div>
+        </section>
+        <section class="sub-footer">
+            <p>© 2023 <a href="/">Hexo</a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Hingle" target="_blank" rel="nofollow">Hingle</a>.</p>
+        </section>
+    </div>
+</footer>
+
+
+<script src="/static/kico.js"></script>
+<script src="/static/hingle.js"></script>
+
+
+<script>var hingle = new Paul_Hingle({"copyright":true,"night":true});</script>
+
+  </body>
+</html>
