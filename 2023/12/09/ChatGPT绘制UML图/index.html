@@ -3,7 +3,7 @@
   <head>
      
     <meta charset="UTF-8">
-    <title>如何保存别人的csdn博客到本地 - imp的个人博客</title>
+    <title>ChatGPT绘制UML图 - imp的个人博客</title>
     <link rel="shortcut icon" href="/static/img/icon.png">
     <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
     
@@ -15,7 +15,7 @@
 
     <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
     <meta property="og:site_name" content="imp的个人博客">
-    <meta property="og:title" content="如何保存别人的csdn博客到本地"/>
+    <meta property="og:title" content="ChatGPT绘制UML图"/>
     
 <meta name="generator" content="Hexo 6.3.0"></head>
 
@@ -42,7 +42,7 @@
     <main>
     <div class="wrap min">
         <section class="post-title">
-            <h2>如何保存别人的csdn博客到本地</h2>
+            <h2>ChatGPT绘制UML图</h2>
             <div class="post-meta">
                 <time class="date">2023.12.09</time>
             
@@ -50,40 +50,45 @@
         </section>
         <article class="post-content">
         
-            <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>一篇喜欢的博客</p>
-<p>属于自己的csdn账号</p>
-<p>浏览器</p>
-<h2 id="方法-步骤"><a href="#方法-步骤" class="headerlink" title="方法&#x2F;步骤"></a>方法&#x2F;步骤</h2><ol>
-<li>首先,在自己喜欢的博客页面,点击鼠标右键,看到如下图片,点击检查(或者是按f12)。</li>
+            <ul>
+<li><h3 id="工具介绍"><a href="#工具介绍" class="headerlink" title="工具介绍"></a><strong>工具介绍</strong></h3><p>我们需要的工具是<a target="_blank" rel="noopener" href="https://app.diagrams.net/">Draw</a>。</p>
+<p><a target="_blank" rel="noopener" href="https://app.diagrams.net/">Draw</a>是一款免费的流程图制作工具，它提供了丰富的流程图素材，可以轻松地制作出各种复杂的类图。</p>
+<p>我们只需要将ChatGPT生成的PlantUML代码复制到Draw的网页版或者本地软件中，Draw就会根据我们输入的代码自动生成一个清晰、美观的类图。</p>
+<h3 id="制作步骤"><a href="#制作步骤" class="headerlink" title="制作步骤"></a><strong>制作步骤</strong></h3><p>接下来，让我们看看具体的制作步骤。</p>
+<ol>
+<li><p>打开<a target="_blank" rel="noopener" href="https://openai.com/">ChatGPT的网页版</a>。</p>
+</li>
+<li><p>在ChatGPT输入类图的步骤和过程，具体可以参照以下prompt：</p>
+<blockquote>
+<p>请作为一个PlantUML类图生成器，你需要根据我的提示内容生成系统UML图，并输出相应的PlantUML代码。</p>
+</blockquote>
+</li>
 </ol>
-<p><img src="/../image/%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E5%88%AB%E4%BA%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%9C%AC%E5%9C%B0/20181110233104307.png" alt="img"></p>
-<ol start="2">
-<li>然后,在右边的源码里边,找到”article_content”标签头,可以看到左侧部分的预览界面被选中的部分就是要复制粘贴文章(包括html部分),检查左侧被选中的部分是否是自己想要的部分。</li>
-</ol>
-<p><img src="/../image/%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E5%88%AB%E4%BA%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%9C%AC%E5%9C%B0/PixPin_2023-12-09_20-37-39.png" alt="PixPin_2023-12-09_20-37-39"></p>
-<ol start="3">
-<li>之后,再右键选择该标签(“article_content”),如下图,选择Copy element复制(或者Cut element 剪切)该标签下的所有元素</li>
-</ol>
-<p><img src="/../image/%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E5%88%AB%E4%BA%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%9C%AC%E5%9C%B0/PixPin_2023-12-09_20-39-30.png" alt="PixPin_2023-12-09_20-39-30"></p>
-<ol start="4">
-<li>将markdown模式转化为普通的富文本模式方法：</li>
-</ol>
-<p>（1）在桌面新建txt格式文本文档，把第3步拷贝的内容粘贴到文本文档里。</p>
-<p><img src="/../image/%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E5%88%AB%E4%BA%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%9C%AC%E5%9C%B0/PixPin_2023-12-09_20-40-03.png" alt="PixPin_2023-12-09_20-40-03"></p>
-<p>（2）把该txt文件后缀名改为html：</p>
-<p><img src="/../image/%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E5%88%AB%E4%BA%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%9C%AC%E5%9C%B0/20190822104229754.png" alt="img"></p>
-<p>（3）双击打开，会发现是带格式，带图片的完美文档</p>
-<p><img src="/../image/%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E5%88%AB%E4%BA%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%9C%AC%E5%9C%B0/20190822104356384.png" alt="img"></p>
-<p>（4）在这个页面上Ctrl+A复制全部内容，保存到一个新的md，再进行修改。</p>
+<p><img src="/../image/ChatGPT%E7%BB%98%E5%88%B6UML%E5%9B%BE/PixPin_2023-12-09_22-13-24.png" alt="PixPin_2023-12-09_22-13-24"></p>
+<p>然后指示它开始画：</p>
+<p><img src="/../image/ChatGPT%E7%BB%98%E5%88%B6UML%E5%9B%BE/PixPin_2023-12-09_22-15-06.png" alt="PixPin_2023-12-09_22-15-06"></p>
+<p>3.将ChatGPT生成的PlantUML代码复制到<a target="_blank" rel="noopener" href="https://app.diagrams.net/">Draw</a>的网页版或者本地软件中。在Draw中，选择+号-&gt;高级-&gt;plantuml，然后将代码粘贴到文本框中,点击插入。</p>
+<p><img src="/../image/ChatGPT%E7%BB%98%E5%88%B6UML%E5%9B%BE/PixPin_2023-12-09_22-16-11.png" alt="PixPin_2023-12-09_22-16-11"></p>
+<p>我生成的图：</p>
+<p>（若是报错可以叫ChatGPT用低版本的PlantUML代码）</p>
+<p><img src="/../image/ChatGPT%E7%BB%98%E5%88%B6UML%E5%9B%BE/PixPin_2023-12-09_22-18-04.png" alt="PixPin_2023-12-09_22-18-04"></p>
+<ul>
+<li>如果要增加其他需求还可以和ChatGPT说</li>
+<li>生成的图不能直接编辑，只能双击修改代码从而影响图</li>
+<li>如果对样式不满意，可以再去visio中画一次</li>
+<li>有什么需求都可以提，但是要切记字数有限制，尽量加强逻辑缩减你的问题</li>
+</ul>
+</li>
+</ul>
 
         </article>
         <section class="post-near">
             <ul>
                 
-                    <li>上一篇: <a href="/2023/12/09/ChatGPT%E7%BB%98%E5%88%B6UML%E5%9B%BE/">ChatGPT绘制UML图</a></li>
+                    <li>上一篇: <a href="/2023/12/10/%E7%94%A8ChatGPT%E5%81%9APPT/">用ChatGPT做PPT</a></li>
                 
                 
-                    <li>下一篇: <a href="/2023/12/09/MySQL%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">MySQL概述</a></li>
+                    <li>下一篇: <a href="/2023/12/09/%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E5%88%AB%E4%BA%BA%E7%9A%84csdn%E5%8D%9A%E5%AE%A2%E5%88%B0%E6%9C%AC%E5%9C%B0/">如何保存别人的csdn博客到本地</a></li>
                 
             </ul>
         </section>
